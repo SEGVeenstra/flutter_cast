@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:cast/cast.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
     session.stateStream.listen((state) {
       if (state == CastSessionState.connected) {
         final snackBar = SnackBar(content: Text('Connected'));
-        Scaffold.of(context).showSnackBar(snackBar);
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
         _sendMessageToYourApp(session);
       }
@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
     session.stateStream.listen((state) {
       if (state == CastSessionState.connected) {
         final snackBar = SnackBar(content: Text('Connected'));
-        Scaffold.of(context).showSnackBar(snackBar);
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
     });
 
